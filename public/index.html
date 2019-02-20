@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ktopchiev Circulum Vitae</title>
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="scripts/semantic-ui-css/semantic.min.css">-->
+    <link rel="stylesheet" type="text/css" href="scripts/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.7.1-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body class="overlay">
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <ul class="nav justify-content-end mt-lg-5">
+                <li class="nav-item">
+                    <a class="nav-link fab fa-facebook-square fa-2x" href="https://www.facebook.com/ktopchieff"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fab fa-linkedin-in fa-2x" href="https://www.linkedin.com/in/karol-topchiev-787b85a8/"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fab fa-twitter-square fa-2x" href="https://twitter.com/TopchievC"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fab fa-skype fa-2x" href="https://join.skype.com/invite/oUSqTNJStOW0"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <div class="container main shadow-lg p-4">
+        <div class="row">
+            <div class="col-xl-12">
+              <div class="media hide-on-sm">
+                <img src="images/karol.jpg" class="align-self-start m-2 mr-4" alt="ktopchiev_pic" id="cv-pic">
+                  <div class="media-body">
+                    <h5 class="mt-0 font-weight-bold name">Karol Topchiev</h5>
+                    <h4 class="mt-0 subtitle text-muted text-black-50">Front End Developer</h4>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <ul class="list-unstyled">
+                              <li class="list-item"><i class="fas fa-birthday-cake text-muted mt-4 mr-3 mb-3"></i>20/10/1990</li>
+                              <li class="list-item"><i class="fas fa-map-marker-alt text-muted mr-3 mb-3"></i>Dimitrovgrad, Bulgaria</li>
+                              <li class="list-item"><i class="fas fa-at text-muted mr-3 mb-3"></i><a class="text-decoration-none" href="mailto:karoltopchiev@gmail.com">karoltopchiev@gmail.com</a></li>
+                              <li class="list-item"><i class="fas fa-mobile-alt text-muted mr-3 mb-3"></i><a class="text-decoration-none" href="tel: +359888666827">+359888666827</a></li>
+                          </ul>
+                        </div>
+                     </div>
+                  </div>
+              </div>
+                <!-- This card is showed on small device resolution -->
+                <div class="row justify-content-center">
+                <div class="card hide-on-md-up">
+                    <img src="images/karol.jpg" class="card-img-top rounded-circle" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Karol Topchiev</h2>
+                        <p class="card-subtitle text-center text-muted">Front End Developer</p>
+                        <ul class="card-text list-unstyled">
+                            <li class="list-item"><i class="fas fa-birthday-cake text-muted mt-4 mr-3 mb-3" id="shake"></i>20/10/1990</li>
+                            <li class="list-item"><i class="fas fa-map-marker-alt text-muted mr-3 mb-3"></i>Dimitrovgrad, Bulgaria</li>
+                            <li class="list-item"><i class="fas fa-at text-muted mr-3 mb-3"></i><a class="text-decoration-none" href="mailto:karoltopchiev@gmail.com">karoltopchiev@gmail.com</a></li>
+                            <li class="list-item"><i class="fas fa-mobile-alt text-muted mr-3 mb-3"></i><a class="text-decoration-none" href="tel: +359888666827">+359888666827</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Navigation menu-->
+    <div class="container main shadow-lg">
+    <div class="row">
+      <div class="col">
+          <ul class="nav border-bottom justify-content-center">
+              <li class="nav-item">
+                  <a class="nav-link text-muted" href="/">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-muted" href="/skills">SKILLS</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-muted" href="/experience">EXPERIENCE</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-muted" href="/education">EDUCATION</a>
+              </li>
+          </ul>
+      </div>
+    </div>
+        <!-- Error Template -->
+        <script id="error-template" type="text/x-handlebars-template">
+            <div style="height:250px;">
+                <br>
+                <h2>
+                    <div>
+                        {{title}}
+                        <div>{{message}}</div>
+                    </div>
+                </h2>
+            </div>
+        </script>
+        <!-- About Template -->
+        <script id="about-template" type="text/x-handlebars-template">
+            <h1>Hello, I'm Karol Topchiev</h1>
+            <hr>
+        </script>
+        <!-- Skills Template -->
+        <script id="skills-template" type="text/x-handlebars-template">
+            <h1>My Top Skills</h1>
+            <hr>
+        </script>
+        <!-- Experience Tepmlate -->
+        <script id="experience-template" type="text/x-handlebars-template">
+            <h1>My Experience is</h1>
+            <hr>
+        </script>
+        <!-- Education -->
+        <script id="education-template" type="text/x-handlebars-template">
+            <h1>My Education is</h1>
+            <hr>
+        </script>
+
+    <!-- Application Root -->
+    <div id="app"></div>
+
+
+<!-- Scripts -->
+    <script src="scripts/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/popper.js/dist/popper.min.js"></script>
+    <script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="scripts/axios/dist/axios.min.js"></script>
+    <script src="scripts/handlebars/dist/handlebars.min.js"></script>
+    <script src="scripts/vanilla-router/dist/vanilla-router.min.js"></script>
+    <script src="js/app.js"></script>
+  </div>
+</body>
+</html>
