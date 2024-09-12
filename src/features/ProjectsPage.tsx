@@ -1,6 +1,10 @@
+import { Container, Typography } from "@mui/material"
+
 function ProjectsPage() {
     return (
-        <div>Projects Page</div>
+        <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+            <Typography>Comming soon...</Typography>
+        </Container>
     )
 }
 
