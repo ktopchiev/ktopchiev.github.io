@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
 
 const navItems = [
-    { title: 'about me', path: '/about' },
+    { title: 'about', path: '/about' },
     { title: 'projects', path: '/projects' },
     { title: 'contacts', path: '/contacts' },
 

@@ -5,7 +5,7 @@ import { useMemo } from "react";
 
 function App() {
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-	console.log(prefersDarkMode);
+
 	const theme = useMemo(
 		() =>
 			createTheme({
@@ -22,9 +22,10 @@ function App() {
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
 				<Header />
-				<Container >
+				<Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', maxWidth: 'false' }}>
 					<Outlet />
 				</Container >
+
 			</ThemeProvider>
 		</>
 	)

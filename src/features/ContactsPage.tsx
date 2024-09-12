@@ -1,6 +1,10 @@
+import { Container, Typography } from "@mui/material"
+
 function ContactsPage() {
     return (
-        <div>Contacts Page</div>
+        <Container sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            <Typography>Feel free to contact me:</Typography>
+        </Container>
     )
 }
 
