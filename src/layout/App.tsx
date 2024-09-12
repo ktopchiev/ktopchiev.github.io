@@ -22,7 +22,7 @@ function App() {
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
 				<Header />
-				<Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', maxWidth: 'false' }}>
+				<Container>
 					<Outlet />
 				</Container >
 

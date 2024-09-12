@@ -14,7 +14,7 @@ import { NavLink } from 'react-router-dom';
 const navItems = [
     { title: 'about me', path: '/about' },
     { title: 'projects', path: '/projects' },
-    { title: 'contacts', path: '/contacts' },
+    { title: 'connect', path: '/connect' },
 
 ];
 
@@ -31,8 +31,8 @@ function Header() {
 
     return (
         <AppBar position="fixed">
-            <Container >
-                <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Container sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Toolbar disableGutters>
                     <Typography
                         variant="h6"
                         noWrap
