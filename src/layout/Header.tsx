@@ -30,25 +30,25 @@ function Header() {
     };
 
     return (
-        <AppBar position="fixed">
+        <AppBar variant='transparent' position="fixed">
             <Container sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Toolbar disableGutters>
                     <Typography
-                        variant="h6"
+                        variant="header-name"
                         noWrap
                         component={NavLink}
                         to={'/'}
                         sx={{
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
+                            fontFamily: 'Source Code Pro',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
-                            '&:hover': { color: 'text.disabled' }
+                            '&:hover': { color: '#6eccfa' }
                         }}
                     >
-                        K.Topchiev
+                        K.Topchiev|
                     </Typography>
 
                     <Box sx={{ flexGrow: 5, display: { xs: 'flex', md: 'none' } }}>
@@ -111,6 +111,7 @@ function Header() {
                                 to={path}
                                 key={path}
                                 onClick={handleCloseNavMenu}
+                                href="#text-buttons"
                                 sx={{
                                     my: 2,
                                     color: 'white',

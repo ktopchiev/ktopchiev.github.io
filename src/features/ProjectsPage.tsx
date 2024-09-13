@@ -4,11 +4,12 @@ import { motion as m } from 'framer-motion';
 function ProjectsPage() {
     return (
         <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.75 }}
+            initial={{ y: "100%" }}
+            animate={{ y: "0%" }}
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            exit={{ opacity: 1 }}
         >
-            <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+            <Container variant="container">
                 <Typography>Comming soon...</Typography>
             </Container>
         </m.div>

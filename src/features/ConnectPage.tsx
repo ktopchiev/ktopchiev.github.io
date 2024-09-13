@@ -34,27 +34,37 @@ function ContactsPage() {
 
     return (
         <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ y: "100%" }}
+            animate={{ y: "0%" }}
             transition={{ duration: 0.75, ease: "easeOut" }}
+            exit={{ opacity: 1 }}
         >
-            <Container sx={{
-                display: 'flex',
-                marginTop: '70px',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}>
-                <Typography sx={{ marginTop: '70px' }}>Contact me in:</Typography>
-                <Box>
-                    <IconButton href="https://www.linkedin.com/in/karol-topchiev-787b85a8/" target="_blank">
-                        <FontAwesomeIcon icon={faLinkedin} size="2xl" style={{ color: '#60e356' }} />
-                    </IconButton>
-                    <IconButton href="https://github.com/ktopchiev" target="_blank">
-                        <FontAwesomeIcon icon={faGithub} size="2xl" style={{ color: '#60e356' }} />
-                    </IconButton>
+            <Container variant="container">
+                <Typography sx={{ marginTop: '70px', color: 'white' }}>Contact me in:</Typography>
+
+                <Box overflow={'hidden'}>
+                    <m.div
+                        animate={{ y: 0 }}
+                        initial={{ y: '100%' }}
+                        transition={{ delay: 0.5, duration: 0.5 }}
+                    >
+                        <IconButton href="https://www.linkedin.com/in/karol-topchiev-787b85a8/" target="_blank" sx={{ '$:hover': 'opacity 0.8' }}>
+                            <FontAwesomeIcon
+                                icon={faLinkedin}
+                                size="2xl"
+                                style={{ color: '#6eccfa' }} />
+                        </IconButton>
+                        <IconButton href="https://github.com/ktopchiev" target="_blank">
+                            <FontAwesomeIcon
+                                icon={faGithub}
+                                size="2xl"
+                                style={{ color: 'darkgray' }} />
+                        </IconButton>
+
+                    </m.div>
                 </Box>
-                <Typography sx={{ marginTop: '70px' }}>Or send me email:</Typography>
+
+                <Typography sx={{ marginTop: '70px', color: 'white' }}>Or send me email:</Typography>
                 <form ref={form} id="email-form" onSubmit={sendEmail}>
                     <TextField
                         label="Name"
@@ -62,6 +72,7 @@ function ContactsPage() {
                         fullWidth
                         required
                         margin="normal"
+                        variant="outlined"
                     />
                     <TextField
                         label="Email"
@@ -70,6 +81,7 @@ function ContactsPage() {
                         fullWidth
                         required
                         margin="normal"
+                        variant="outlined"
                     />
                     <TextField
                         label="Message"
@@ -79,15 +91,17 @@ function ContactsPage() {
                         fullWidth
                         required
                         margin="normal"
+                        variant="outlined"
                     />
                     <Button
-                        variant="contained"
+                        variant="outlined"
                         type="submit"
                         sx={{
-                            backgroundColor: '#60e356',
+                            color: 'white',
+                            borderColor: '#6eccfa',
                             transition: 'background-color 0.2s',
                             '&:hover': {
-                                backgroundColor: '#7bf772'
+                                borderColor: '#7bf772'
                             }
                         }}>
                         Send Email
