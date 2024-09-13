@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { FormEvent, useRef } from "react";
 import emailjs from 'emailjs-com';
+import { motion as m } from 'framer-motion';
 
 function ContactsPage() {
 
@@ -32,62 +33,68 @@ function ContactsPage() {
     };
 
     return (
-        <Container sx={{
-            display: 'flex',
-            marginTop: '70px',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-        }}>
-            <Typography sx={{ marginTop: '70px' }}>Contact me in:</Typography>
-            <Box>
-                <IconButton href="https://www.linkedin.com/in/karol-topchiev-787b85a8/" target="_blank">
-                    <FontAwesomeIcon icon={faLinkedin} size="2xl" style={{ color: '#60e356' }} />
-                </IconButton>
-                <IconButton href="https://github.com/ktopchiev" target="_blank">
-                    <FontAwesomeIcon icon={faGithub} size="2xl" style={{ color: '#60e356' }} />
-                </IconButton>
-            </Box>
-            <Typography sx={{ marginTop: '70px' }}>Or send me email:</Typography>
-            <form ref={form} id="email-form" onSubmit={sendEmail}>
-                <TextField
-                    label="Name"
-                    name="user_name"
-                    fullWidth
-                    required
-                    margin="normal"
-                />
-                <TextField
-                    label="Email"
-                    name="user_email"
-                    type="email"
-                    fullWidth
-                    required
-                    margin="normal"
-                />
-                <TextField
-                    label="Message"
-                    name="message"
-                    multiline
-                    rows={4}
-                    fullWidth
-                    required
-                    margin="normal"
-                />
-                <Button
-                    variant="contained"
-                    type="submit"
-                    sx={{
-                        backgroundColor: '#60e356',
-                        transition: 'background-color 0.2s',
-                        '&:hover': {
-                            backgroundColor: '#7bf772'
-                        }
-                    }}>
-                    Send Email
-                </Button>
-            </form>
-        </Container>
+        <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.75, ease: "easeOut" }}
+        >
+            <Container sx={{
+                display: 'flex',
+                marginTop: '70px',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}>
+                <Typography sx={{ marginTop: '70px' }}>Contact me in:</Typography>
+                <Box>
+                    <IconButton href="https://www.linkedin.com/in/karol-topchiev-787b85a8/" target="_blank">
+                        <FontAwesomeIcon icon={faLinkedin} size="2xl" style={{ color: '#60e356' }} />
+                    </IconButton>
+                    <IconButton href="https://github.com/ktopchiev" target="_blank">
+                        <FontAwesomeIcon icon={faGithub} size="2xl" style={{ color: '#60e356' }} />
+                    </IconButton>
+                </Box>
+                <Typography sx={{ marginTop: '70px' }}>Or send me email:</Typography>
+                <form ref={form} id="email-form" onSubmit={sendEmail}>
+                    <TextField
+                        label="Name"
+                        name="user_name"
+                        fullWidth
+                        required
+                        margin="normal"
+                    />
+                    <TextField
+                        label="Email"
+                        name="user_email"
+                        type="email"
+                        fullWidth
+                        required
+                        margin="normal"
+                    />
+                    <TextField
+                        label="Message"
+                        name="message"
+                        multiline
+                        rows={4}
+                        fullWidth
+                        required
+                        margin="normal"
+                    />
+                    <Button
+                        variant="contained"
+                        type="submit"
+                        sx={{
+                            backgroundColor: '#60e356',
+                            transition: 'background-color 0.2s',
+                            '&:hover': {
+                                backgroundColor: '#7bf772'
+                            }
+                        }}>
+                        Send Email
+                    </Button>
+                </form>
+            </Container>
+        </m.div>
     )
 }
 

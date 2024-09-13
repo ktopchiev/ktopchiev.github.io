@@ -4,10 +4,15 @@ import CenterFocusStrongOutlinedIcon from '@mui/icons-material/CenterFocusStrong
 import SelfImprovementOutlinedIcon from '@mui/icons-material/SelfImprovementOutlined';
 import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
 import { NavLink } from "react-router-dom";
+import { motion as m } from "framer-motion"
 
 function AboutMePage() {
 	return (
-		<>
+		<m.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 0.75 }}
+		>
 			<Container sx={{
 				display: 'flex',
 				marginTop: '100px',
@@ -41,7 +46,7 @@ function AboutMePage() {
 					Feel free to check out my projects and <Link component={NavLink} to={'/contacts'}>connect</Link> with me!
 				</Typography >
 			</Container >
-		</>
+		</m.div>
 	)
 }
 
