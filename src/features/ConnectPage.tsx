@@ -15,14 +15,14 @@ function ContactsPage() {
             .sendForm(
                 'service_1xyf8n8',     // Replace with your EmailJS service ID
                 'template_xpuc3ku',    // Replace with your EmailJS template ID
-                form.current,
+                form.current!,
                 'WUgi4tpeweg9m6lA0'         // Replace with your EmailJS user ID
             )
             .then(
                 (result) => {
                     console.log(result.text);
                     alert('Email sent successfully!');
-                    form.current.reset();
+                    form.current!.reset();
                 },
                 (error) => {
                     console.log(error.text);
