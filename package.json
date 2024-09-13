@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/ktopchiev/ktopchiev.github.io/ktopchiev.github.io/",
   "name": "ktopchiev.github.io",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +8,7 @@
     "start": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build": "tsc -b && vite build",
+    "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -40,6 +41,5 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.0",
     "vite": "^5.4.0"
-  },
-  "homepage": "http://ktopchiev.github.io/ktopchiev.github.io"
+  }
 }
