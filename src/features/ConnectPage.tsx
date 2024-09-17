@@ -39,8 +39,17 @@ function ContactsPage() {
             transition={{ duration: 0.75, ease: "easeOut" }}
             exit={{ opacity: 1 }}
         >
-            <Container variant="container">
-                <Typography sx={{ marginTop: '70px', color: 'white' }}>Contact me in:</Typography>
+            <Container
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    color: 'white',
+                    padding: '50px'
+                }}
+            >
+                <Typography sx={{ color: 'white' }}>Contact me in:</Typography>
 
                 <Box overflow={'hidden'}>
                     <m.div
@@ -64,49 +73,99 @@ function ContactsPage() {
                     </m.div>
                 </Box>
 
-                <Typography sx={{ marginTop: '70px', color: 'white' }}>Or send me email:</Typography>
-                <form ref={form} id="email-form" onSubmit={sendEmail}>
-                    <TextField
-                        label="Name"
-                        name="user_name"
-                        fullWidth
-                        required
-                        margin="normal"
-                        variant="outlined"
-                    />
-                    <TextField
-                        label="Email"
-                        name="user_email"
-                        type="email"
-                        fullWidth
-                        required
-                        margin="normal"
-                        variant="outlined"
-                    />
-                    <TextField
-                        label="Message"
-                        name="message"
-                        multiline
-                        rows={4}
-                        fullWidth
-                        required
-                        margin="normal"
-                        variant="outlined"
-                    />
-                    <Button
-                        variant="outlined"
-                        type="submit"
-                        sx={{
-                            color: 'white',
-                            borderColor: '#6eccfa',
-                            transition: 'background-color 0.2s',
-                            '&:hover': {
-                                borderColor: '#7bf772'
-                            }
-                        }}>
-                        Send Email
-                    </Button>
-                </form>
+                <Box
+                    sx={{ display: 'flex', flexDirection: 'column' }}
+                >
+                    <Typography sx={{ marginTop: '70px', color: 'white' }}>Or send me email:</Typography>
+                    <form ref={form} id="email-form" onSubmit={sendEmail}>
+                        <TextField
+                            label="Name"
+                            name="user_name"
+                            fullWidth
+                            required
+                            margin="normal"
+                            variant="outlined"
+                            sx={{
+                                "& .MuiOutlinedInput-root": {
+                                    color: "white",
+                                    fontFamily: "Arial",
+                                    fontWeight: "bold",
+                                    "& .MuiOutlinedInput-notchedOutline": {
+                                        borderColor: 'white',
+                                        color: 'white'
+                                    }
+                                },
+                                "& .MuiInputLabel-outlined": {
+                                    color: "white",
+                                    fontWeight: "bold",
+                                }
+                            }}
+                        />
+                        <TextField
+                            label="Email"
+                            name="user_email"
+                            type="email"
+                            fullWidth
+                            required
+                            margin="normal"
+                            variant="outlined"
+                            sx={{
+                                "& .MuiOutlinedInput-root": {
+                                    color: "white",
+                                    fontFamily: "Arial",
+                                    fontWeight: "bold",
+                                    "& .MuiOutlinedInput-notchedOutline": {
+                                        borderColor: 'white',
+                                        color: 'white'
+                                    }
+                                },
+                                "& .MuiInputLabel-outlined": {
+                                    color: "white",
+                                    fontWeight: "bold",
+                                }
+                            }}
+                        />
+                        <TextField
+                            label="Message"
+                            name="message"
+                            multiline
+                            rows={4}
+                            fullWidth
+                            required
+                            margin="normal"
+                            variant="outlined"
+                            sx={{
+                                "& .MuiOutlinedInput-root": {
+                                    color: "white",
+                                    fontFamily: "Arial",
+                                    fontWeight: "bold",
+                                    "& .MuiOutlinedInput-notchedOutline": {
+                                        borderColor: 'white',
+                                        color: 'white'
+                                    }
+                                },
+                                "& .MuiInputLabel-outlined": {
+                                    color: "white",
+                                    fontWeight: "bold",
+                                }
+                            }}
+                        />
+                        <Button
+                            variant="outlined"
+                            type="submit"
+                            sx={{
+                                color: 'white',
+                                borderColor: '#6eccfa',
+                                transition: 'background-color 0.2s',
+                                '&:hover': {
+                                    borderColor: '#7bf772'
+                                },
+                                justifySelf: 'end'
+                            }}>
+                            Send Email
+                        </Button>
+                    </form>
+                </Box>
             </Container>
         </m.div>
     )

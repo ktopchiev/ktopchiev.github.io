@@ -9,7 +9,16 @@ function ProjectsPage() {
             transition={{ duration: 0.75, ease: "easeOut" }}
             exit={{ opacity: 1 }}
         >
-            <Container variant="container">
+            <Container
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    color: 'white',
+                    padding: '50px'
+                }}  
+            >
                 <Typography>Comming soon...</Typography>
             </Container>
         </m.div>

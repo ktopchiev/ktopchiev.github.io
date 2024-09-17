@@ -8,8 +8,6 @@ import { motion as m } from "framer-motion"
 
 function AboutMePage() {
 
-
-
 	return (
 		<m.div
 			initial={{ y: "100%" }}
@@ -17,8 +15,16 @@ function AboutMePage() {
 			transition={{ duration: 0.75, ease: "easeOut" }}
 			exit={{ opacity: 1 }}
 		>
-			<Container variant='container'>
-				<AssignmentIndOutlinedIcon fontSize="large" sx={{ marginBottom: '20px', color: '#6eccfa' }}></AssignmentIndOutlinedIcon>
+			<Container
+				sx={{
+					display: 'flex',
+					flexDirection: 'column',
+					justifyContent: 'center',
+					alignItems: 'center',
+					color: 'white'
+				}}
+			>
+				<AssignmentIndOutlinedIcon fontSize="large" sx={{ marginBottom: '20px', marginTop: '50px', color: '#6eccfa' }}></AssignmentIndOutlinedIcon>
 				<Typography sx={{ marginBottom: '20px' }}>
 					Hi! I’m a software developer with experience in full-stack development, working mainly with C# and .NET on the backend,
 					and React with TypeScript on the frontend. I’ve had formal training in both C# and JavaScript,
@@ -41,7 +47,7 @@ function AboutMePage() {
 					I also love reading books whenever I get the chance. These hobbies keep me inspired and give me balance outside of tech.
 				</Typography >
 				<Typography sx={{ marginBottom: '20px' }}>
-					Feel free to check out my projects and <Link component={NavLink} to={'/contacts'}>connect</Link> with me!
+					Feel free to check out my projects and <Link component={NavLink} to={'/connect'}>connect</Link> with me!
 				</Typography >
 			</Container >
 		</m.div >
