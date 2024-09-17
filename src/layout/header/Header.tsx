@@ -112,6 +112,7 @@ function Header() {
                                 color: 'inherit',
                                 textDecoration: 'none',
                             }}
+                            id='header-name'
                         >
                             K.Topchiev
                         </Typography>
