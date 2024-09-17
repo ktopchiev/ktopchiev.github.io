@@ -18,7 +18,7 @@ function HomePage() {
                         }}
                         component="img"
                         alt="My portrait photo."
-                        src="../public/Me.png"
+                        src="../public/me.png"
                     >
 
                     </Box>
