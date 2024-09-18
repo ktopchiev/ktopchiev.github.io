@@ -5,13 +5,16 @@ import SelfImprovementOutlinedIcon from '@mui/icons-material/SelfImprovementOutl
 import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
 import { NavLink } from "react-router-dom";
 import { motion as m } from "framer-motion"
+import useAnimationState from "../hooks/useAnimationState";
 
 function AboutMePage() {
+
+	const isLoaded = useAnimationState();
 
 	return (
 		<m.div
 			initial={{ y: "100%" }}
-			animate={{ y: "0%" }}
+			animate={isLoaded ? { y: "0%" } : { y: "100%" }}
 			transition={{ duration: 0.75, ease: "easeOut" }}
 			exit={{ opacity: 1 }}
 		>
@@ -19,8 +22,6 @@ function AboutMePage() {
 				sx={{
 					display: 'flex',
 					flexDirection: 'column',
-					justifyContent: 'center',
-					alignItems: 'center',
 					color: 'white'
 				}}
 			>

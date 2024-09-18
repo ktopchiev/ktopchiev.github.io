@@ -4,8 +4,11 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { FormEvent, useRef } from "react";
 import emailjs from 'emailjs-com';
 import { motion as m } from 'framer-motion';
+import useAnimationState from "../hooks/useAnimationState";
 
 function ContactsPage() {
+
+    const isLoaded = useAnimationState();
 
     const form = useRef<HTMLFormElement | null>(null);
 
@@ -35,17 +38,14 @@ function ContactsPage() {
     return (
         <m.div
             initial={{ y: "100%" }}
-            animate={{ y: "0%" }}
+            animate={isLoaded ? { y: "0%" } : { y: "100%" }}
             transition={{ duration: 0.75, ease: "easeOut" }}
             exit={{ opacity: 1 }}
         >
             <Container
                 sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    color: 'white',
                     padding: '50px'
                 }}
             >
