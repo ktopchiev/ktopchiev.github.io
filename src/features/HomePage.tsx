@@ -1,21 +1,23 @@
 import { Box, Container, Grid, Typography } from "@mui/material"
 import { motion as m } from 'framer-motion'
 import useAnimationState from "../hooks/useAnimationState"
+import useScreenSize from "../hooks/useScreenSize";
 
 function HomePage() {
 
     const isLoaded = useAnimationState();
+    const isSmallScreen = useScreenSize();
 
     return (
         <Container>
-            <Grid container spacing={8}
+            <Grid container spacing={isSmallScreen ? 0 : 8}
                 sx={{
                     flexDirection: { xs: 'column', md: 'row' },
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}
             >
-                <Grid item xs={12} md={6} sx={{ padding: '15px' }}>
+                <Grid item xs={12} md={6}>
                     <Box
                         sx={{
                             width: '100%',
@@ -29,24 +31,14 @@ function HomePage() {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} sx={{ py: 0 }}>
                     <m.div
                         initial={{ x: "-100%", opacity: 0, zIndex: 1 }}
-                        animate={isLoaded ? { x: "0%", opacity: 1, zIndex: 6 } : { x: "-100%", opacity: 0, zIndex: 0 }}
+                        animate={isLoaded ? { x: "0%", opacity: 1 } : { x: "-100%", opacity: 0 }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         exit={{ opacity: 1 }}
                     >
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                color: 'white'
-                            }}
-                        >
-                            <Typography variant="h3">Hi, I'm Karol. A passionate software developer. Explore my portfolio.</Typography>
-                        </Box>
+                        <Typography sx={{ fontSize: { md: '30px', xs: '25px' } }} color={'white'}>Hi, I'm Karol. A passionate software developer. Explore my portfolio.</Typography>
                     </m.div>
                 </Grid>
 
