@@ -11,7 +11,7 @@ import useScreenSize from "../hooks/useScreenSize";
 function AboutMePage() {
 
 	const isLoaded = useAnimationState();
-	const isSmallScreen = useScreenSize();
+	const isMobile = useScreenSize();
 
 	return (
 		<m.div
@@ -26,12 +26,14 @@ function AboutMePage() {
 					flexDirection: 'column',
 					alignItems: 'center',
 					color: 'white',
-					padding: 0
+					mt: 4,
+					pt: '60px',
+					minHeight: 'calc(100vh - 60px)'
 				}}
 			>
-				<AssignmentIndOutlinedIcon fontSize="large" sx={{ marginTop: isSmallScreen ? '200px' : '50px', color: '#6eccfa' }}></AssignmentIndOutlinedIcon>
+				<AssignmentIndOutlinedIcon fontSize="large" sx={{ marginTop: isMobile ? '200px' : '50px', color: '#6eccfa' }}></AssignmentIndOutlinedIcon>
 				<Typography >
-					Hi! I’m a software developer with experience in full-stack development, working mainly with C# and .NET on the backend,
+					Hi! I’m a software developer working mainly with C# and .NET on the backend,
 					and React with TypeScript on the frontend. I’ve had formal training in both C# and JavaScript,
 					but recently I’ve been diving into Domain-Driven Design and Clean Code concepts through self-study to level up my skills.
 				</Typography>
@@ -39,7 +41,7 @@ function AboutMePage() {
 				<CenterFocusStrongOutlinedIcon fontSize="large" sx={{ marginTop: '28px', color: '#6eccfa' }}></CenterFocusStrongOutlinedIcon>
 				<Typography >
 					I’m passionate about building efficient, maintainable code and constantly learning. Right now,
-					I’m focusing on improving my frontend expertise with React.
+					I’m focusing on improving my Design Patterns knowledge.
 				</Typography>
 
 				<SelfImprovementOutlinedIcon fontSize="large" sx={{ marginTop: '28px', color: '#6eccfa' }}></SelfImprovementOutlinedIcon>
@@ -56,7 +58,9 @@ function AboutMePage() {
 				</Typography >
 
 				<Typography sx={{ marginTop: '28px' }}>
-					Feel free to check out my projects and <Link component={NavLink} to={'/connect'}>connect</Link> with me!
+					Feel free to check out my
+					<Link component={NavLink} to={'/projects'}>projects</Link> and
+					<Link component={NavLink} to={'/connect'}>connect</Link> with me!
 				</Typography >
 
 			</Container >

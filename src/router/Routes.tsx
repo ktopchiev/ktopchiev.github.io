@@ -2,7 +2,7 @@ import { createHashRouter } from "react-router-dom";
 import App from "../layout/App";
 import ConnectPage from "../features/ConnectPage";
 import AboutMePage from "../features/AboutMePage";
-import ProjectsPage from "../features/ProjectsPage";
+import ProjectsPage from "../features/projects/ProjectsPage";
 import HomePage from "../features/HomePage";
 
 const router = createHashRouter([

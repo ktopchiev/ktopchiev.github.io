@@ -6,18 +6,18 @@ import useScreenSize from "../hooks/useScreenSize";
 function HomePage() {
 
     const isLoaded = useAnimationState();
-    const isSmallScreen = useScreenSize();
+    const isMobile = useScreenSize();
 
     return (
-        <Container>
-            <Grid container spacing={isSmallScreen ? 0 : 8}
+        <Container sx={{ p: isMobile ? 1 : 50 }}>
+            <Grid container spacing={isMobile ? 0 : 8}
                 sx={{
                     flexDirection: { xs: 'column', md: 'row' },
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}
             >
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6} md={6}>
                     <Box
                         sx={{
                             width: '100%',
@@ -38,7 +38,10 @@ function HomePage() {
                         transition={{ duration: 1, ease: "easeOut" }}
                         exit={{ opacity: 1 }}
                     >
-                        <Typography sx={{ fontSize: { md: '30px', xs: '25px' } }} color={'white'}>Hi, I'm Karol. A passionate software developer. Explore my portfolio.</Typography>
+                        <Typography sx={{ fontSize: { md: '30px', xs: '25px' } }} color={'white'}>
+                            Hi, I'm Karol.<br />
+                            A passionate software developer. Explore my portfolio.
+                        </Typography>
                     </m.div>
                 </Grid>
 
