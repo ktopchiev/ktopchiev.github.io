@@ -6,7 +6,8 @@ import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import { Box, CardActionArea, Chip, Grid, IconButton, styled } from '@mui/material';
 import Project from '../../models/project';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface Props {
     project: Project
@@ -27,11 +28,10 @@ export default function ProjectCard({ project }: Props) {
             borderRadius: '10px',
             transition: 'all 0.2s ease-in-out',
             '&:hover': {
-                background: 'rgba(97, 97, 97, 0.17)',
+                background: 'rgba(207, 207, 207, 0.1)',
                 color: 'rgb(255, 255, 255)',
                 cursor: 'pointer'
             },
-            mx: 4,
             mb: 2
         },
         chip: {
@@ -40,12 +40,20 @@ export default function ProjectCard({ project }: Props) {
             backgroundColor: '#03ff42',
             mr: 1,
             mt: 1
+        },
+        button: {
+            color: 'darkgray',
+            '&: hover': {
+                color: 'rgb(255, 255, 255)',
+                cursor: 'pointer'
+            }
         }
     }
 
     const StyledCardActionArea = styled(CardActionArea)(() => `
     .MuiCardActionArea-focusHighlight {
         background: transparent;
+        cursor: 'pointer'
     }
     `);
 
@@ -87,12 +95,13 @@ export default function ProjectCard({ project }: Props) {
             </StyledCardActionArea>
             <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <IconButton
-                    sx={{
-                        color: 'silver',
-                        '&:hover': { color: 'white' }
-                    }}
-                    onClick={() => handleClick(project.repoUrl)}>
-                    <GitHubIcon />
+                    onClick={() => handleClick(project.repoUrl)}
+                    sx={styles.button}
+                >
+                    <FontAwesomeIcon
+                        icon={faGithub}
+                        size="xl"
+                    />
                 </IconButton>
             </CardActions>
         </Card >

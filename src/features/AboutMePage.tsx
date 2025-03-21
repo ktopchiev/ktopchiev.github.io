@@ -6,12 +6,10 @@ import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined
 import { NavLink } from "react-router-dom";
 import { motion as m } from "framer-motion"
 import useAnimationState from "../hooks/useAnimationState";
-import useScreenSize from "../hooks/useScreenSize";
 
 function AboutMePage() {
 
 	const isLoaded = useAnimationState();
-	const isMobile = useScreenSize();
 
 	return (
 		<m.div
@@ -26,12 +24,10 @@ function AboutMePage() {
 					flexDirection: 'column',
 					alignItems: 'center',
 					color: 'white',
-					mt: 4,
-					pt: '60px',
-					minHeight: 'calc(100vh - 60px)'
+					pt: 10
 				}}
 			>
-				<AssignmentIndOutlinedIcon fontSize="large" sx={{ marginTop: isMobile ? '200px' : '50px', color: '#6eccfa' }}></AssignmentIndOutlinedIcon>
+				<AssignmentIndOutlinedIcon fontSize="large" sx={{ color: '#6eccfa' }}></AssignmentIndOutlinedIcon>
 				<Typography >
 					Hi! I’m a software developer working mainly with C# and .NET on the backend,
 					and React with TypeScript on the frontend. I’ve had formal training in both C# and JavaScript,

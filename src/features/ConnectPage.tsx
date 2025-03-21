@@ -45,8 +45,7 @@ function ContactsPage() {
             <Container
                 sx={{
                     justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '50px'
+                    alignItems: 'center'
                 }}
             >
                 <Typography sx={{ color: 'white' }}>Contact me in:</Typography>
