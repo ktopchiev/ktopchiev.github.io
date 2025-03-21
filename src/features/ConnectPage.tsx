@@ -44,8 +44,7 @@ function ContactsPage() {
         >
             <Container
                 sx={{
-                    justifyContent: 'center',
-                    alignItems: 'center'
+                    justifyContent: 'center'
                 }}
             >
                 <Typography sx={{ color: 'white' }}>Contact me in:</Typography>
@@ -56,26 +55,33 @@ function ContactsPage() {
                         initial={{ y: '100%' }}
                         transition={{ delay: 0.5, duration: 0.5 }}
                     >
-                        <IconButton href="https://www.linkedin.com/in/karol-topchiev-787b85a8/" target="_blank" sx={{ '$:hover': 'opacity 0.8' }}>
+                        <IconButton
+                            href="https://www.linkedin.com/in/karol-topchiev-787b85a8/"
+                            target="_blank"
+                            sx={{ color: '#6eccfa', '&: hover': { color: 'white' } }}
+                        >
                             <FontAwesomeIcon
                                 icon={faLinkedin}
                                 size="2xl"
-                                style={{ color: '#6eccfa' }} />
+                            />
                         </IconButton>
-                        <IconButton href="https://github.com/ktopchiev" target="_blank">
+                        <IconButton
+                            href="https://github.com/ktopchiev"
+                            target="_blank"
+                            sx={{ color: 'darkgray', '&: hover': { color: 'white' } }}
+                        >
                             <FontAwesomeIcon
                                 icon={faGithub}
                                 size="2xl"
-                                style={{ color: 'darkgray' }} />
+                            />
                         </IconButton>
-
                     </m.div>
                 </Box>
 
                 <Box
                     sx={{ display: 'flex', flexDirection: 'column' }}
                 >
-                    <Typography sx={{ marginTop: '70px', color: 'white' }}>Or send me email:</Typography>
+                    <Typography sx={{ mt: 3, color: 'white' }}>Or send me email:</Typography>
                     <form ref={form} id="email-form" onSubmit={sendEmail}>
                         <TextField
                             label="Name"
@@ -166,7 +172,7 @@ function ContactsPage() {
                     </form>
                 </Box>
             </Container>
-        </m.div>
+        </m.div >
     )
 }
 
