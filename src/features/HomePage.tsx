@@ -9,7 +9,7 @@ function HomePage() {
     const isMobile = useScreenSize();
 
     return (
-        <Container sx={{ p: isMobile ? 1 : 50 }}>
+        <Container>
             <Grid container spacing={isMobile ? 0 : 8}
                 sx={{
                     flexDirection: { xs: 'column', md: 'row' },
