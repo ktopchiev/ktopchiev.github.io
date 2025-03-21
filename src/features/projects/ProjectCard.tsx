@@ -27,17 +27,19 @@ export default function ProjectCard({ project }: Props) {
             borderRadius: '10px',
             transition: 'all 0.2s ease-in-out',
             '&:hover': {
-                background: 'rgba(70, 86, 62, 0.17)',
+                background: 'rgba(97, 97, 97, 0.17)',
                 color: 'rgb(255, 255, 255)',
                 cursor: 'pointer'
             },
-            mx: 4
+            mx: 4,
+            mb: 2
         },
         chip: {
             color: 'rgb(6, 47, 2)',
             fontWeight: 'bold',
             backgroundColor: '#03ff42',
-            mr: 1
+            mr: 1,
+            mt: 1
         }
     }
 
@@ -74,7 +76,7 @@ export default function ProjectCard({ project }: Props) {
                                     {project.shortDescription}
                                 </Typography>
                             </Box>
-                            <Box sx={{ display: 'flex', mt: 2, justifyContent: 'flex-start', p: 1 }}>
+                            <Box sx={{ display: 'flex', flexWrap: 'wrap', mt: 2, justifyContent: 'flex-start', p: 1 }}>
                                 {project.techStack.map(tech =>
                                     <Chip label={tech} sx={styles.chip} />
                                 )}

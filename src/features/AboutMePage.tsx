@@ -35,13 +35,13 @@ function AboutMePage() {
 				<Typography >
 					Hi! I’m a software developer working mainly with C# and .NET on the backend,
 					and React with TypeScript on the frontend. I’ve had formal training in both C# and JavaScript,
-					but recently I’ve been diving into Domain-Driven Design and Clean Code concepts through self-study to level up my skills.
+					but recently I’ve been diving into Clean Code and Clean Architecture concepts through self-study to level up my skills.
 				</Typography>
 
 				<CenterFocusStrongOutlinedIcon fontSize="large" sx={{ marginTop: '28px', color: '#6eccfa' }}></CenterFocusStrongOutlinedIcon>
 				<Typography >
 					I’m passionate about building efficient, maintainable code and constantly learning. Right now,
-					I’m focusing on improving my Design Patterns knowledge.
+					I’m focusing on improving my backend knowledge.
 				</Typography>
 
 				<SelfImprovementOutlinedIcon fontSize="large" sx={{ marginTop: '28px', color: '#6eccfa' }}></SelfImprovementOutlinedIcon>
@@ -58,8 +58,8 @@ function AboutMePage() {
 				</Typography >
 
 				<Typography sx={{ marginTop: '28px' }}>
-					Feel free to check out my
-					<Link component={NavLink} to={'/projects'}>projects</Link> and
+					Feel free to check out my&nbsp;
+					<Link component={NavLink} to={'/projects'}>projects</Link> and&nbsp;
 					<Link component={NavLink} to={'/connect'}>connect</Link> with me!
 				</Typography >
 

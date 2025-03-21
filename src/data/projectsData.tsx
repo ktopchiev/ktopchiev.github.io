@@ -7,15 +7,35 @@ export const projectsData: Project[] = [
         image: "../images/carlos-e-commerce-app.png",
         url: "https://carlos-ecommerce-app.fly.dev/",
         repoUrl: "https://github.com/ktopchiev/E-Commerce",
-        shortDescription: "Lorem ipsum dolor sit amet consectetur, adipisicing elit." +
-            "Aperiam cumque error rem tenetur dolorum. Saepe aspernatur quod eius qui amet quaerat voluptatem, eos beatae. Pariatur, vel quaerat. Expedita, id quos.",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit aliquam voluptates excepturi nobis culpa?" +
-            "Dolorum voluptatibus accusamus possimus, similique tenetur culpa quidem corrupti laboriosam ipsa exercitationem odit. Excepturi, nobis aliquam.",
+        shortDescription: "This is a full-stack web application using ASP.NET Core (backend) and React + Redux (frontend)." +
+            "It uses PostgreSQL as the database and is containerized with Docker and deployed on Fly.io,",
+        description: "This is a full-stack web application using ASP.NET Core (backend) and React + Redux (frontend)." +
+            "It uses PostgreSQL as the database and is containerized with Docker and deployed on Fly.io,",
         techStack: [
             "ASP.NET",
+            "PostgreSQL",
+            "Docker",
+            "fly.io",
             "React",
             "Redux",
             "MaterialUI",
+            "Responsive Design",
+            "GitHub Actions"
         ]
     },
+    {
+        id: 2,
+        title: "Portfolio GitHub Page",
+        image: "../images/my-portfolio-page.png",
+        url: "",
+        repoUrl: "https://github.com/ktopchiev/ktopchiev.github.io",
+        shortDescription: "Portfolio web site made with React + Typescript and deployed on GitHub Pages",
+        description: "",
+        techStack: [
+            "React",
+            "MaterialUI",
+            "Responsive Design",
+            "GitHub Pages"
+        ]
+    }
 ]
