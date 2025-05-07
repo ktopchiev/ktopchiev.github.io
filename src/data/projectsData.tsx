@@ -17,14 +17,38 @@ export const projectsData: Project[] = [
             "Docker",
             "fly.io",
             "React",
-            "Redux",
+            "Redux Toolkit",
+            "Axios",
             "MaterialUI",
             "Responsive Design",
-            "GitHub Actions"
+            "GitHub Actions",
         ]
     },
     {
         id: 2,
+        title: "Blacksmith E-commerce Web App",
+        image: "../images/blacksmith.png",
+        url: "https://blacksmithsolution-e5dfd7auercug3cz.westeurope-01.azurewebsites.net/",
+        repoUrl: "https://github.com/ktopchiev/BlacksmithSolution",
+        shortDescription: "This is a Full-stack, Clean Architecture web application using ASP.NET Core (backend) and React + Redux (frontend)." +
+            "It uses PostgreSQL on Supabase as the database and is deployed on Azure.",
+        description: "",
+        techStack: [
+            "ASP.NET",
+            "PostgreSQL",
+            "React",
+            "Redux Toolkit",
+            "Rtk Query",
+            "MaterialUI",
+            "GitHub Actions",
+            "CI/CD",
+            "Supabase",
+            "Azure",
+            "Clean Architecture",
+        ]
+    },
+    {
+        id: 3,
         title: "Portfolio GitHub Page",
         image: "../images/my-portfolio-page.png",
         url: "",
@@ -37,5 +61,6 @@ export const projectsData: Project[] = [
             "Responsive Design",
             "GitHub Pages"
         ]
-    }
+    },
+
 ]
