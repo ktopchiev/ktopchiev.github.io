@@ -3,6 +3,36 @@ import Project from "../models/project";
 export const projectsData: Project[] = [
     {
         id: 1,
+        title: "Smarty Party",
+        image: "../images/smarty-party-screen.png",
+        url: "#",
+        repoUrl: "https://github.com/ktopchiev/SmartyParty",
+        shortDescription: `This is a full-stack AI Powered web application.
+            It is a real-time multiplayer quiz game built with ASP.NET, React, Redux Toolkit, SignalR, and PostgreSQL.
+            Players can join quiz rooms, chat, and compete in live trivia rounds.
+            Note: It is still not live.`,
+        description: `This is a full-stack AI Powered web application.
+            It is a real-time multiplayer quiz game built with ASP.NET, React, Redux Toolkit, SignalR, and PostgreSQL.
+            Players can join quiz rooms, chat, and compete in live trivia rounds.
+            Note: It is still not live.`,
+        techStack: [
+            "ASP.NET",
+            "React",
+            "SignalR",
+            "OpenAI",
+            "Minimal API",
+            "PostgreSQL",
+            "Redux Toolkit",
+            "RTK Query",
+            "Bootstrap",
+            "Responsive Design",
+            "fly.io",
+            "Docker",
+            "GitHub Actions",
+        ]
+    },
+    {
+        id: 2,
         title: "E-Commerce Web App",
         image: "../images/carlos-e-commerce-app.png",
         url: "https://carlos-ecommerce-app.fly.dev/",
@@ -25,7 +55,7 @@ export const projectsData: Project[] = [
         ]
     },
     {
-        id: 2,
+        id: 3,
         title: "Blacksmith E-commerce Web App",
         image: "../images/blacksmith.png",
         url: "https://blacksmithsolution-e5dfd7auercug3cz.westeurope-01.azurewebsites.net/",
@@ -48,7 +78,7 @@ export const projectsData: Project[] = [
         ]
     },
     {
-        id: 3,
+        id: 4,
         title: "Portfolio GitHub Page",
         image: "../images/my-portfolio-page.png",
         url: "",
