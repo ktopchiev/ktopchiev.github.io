@@ -1,20 +1,37 @@
-import { Box, Button, Container, IconButton, TextField, Typography } from "@mui/material"
+import { Alert, AlertTitle, Box, Collapse, Container, IconButton, TextField, Typography } from "@mui/material"
+import LoadingButton from '@mui/lab/LoadingButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
-import { FormEvent, useRef } from "react";
+import { FormEvent, useRef, useState } from "react";
 import emailjs from 'emailjs-com';
 import { motion as m } from 'framer-motion';
 import useAnimationState from "../hooks/useAnimationState";
+import CloseIcon from '@mui/icons-material/Close';
+import SendIcon from '@mui/icons-material/Send';
+
+type Message = {
+    title: string;
+    text: string;
+}
 
 function ContactsPage() {
 
+    const [loading, setLoading] = useState<boolean>(false);
+    const [open, setOpen] = useState<boolean>(false);
+    const [status, setStatus] = useState<'error' | 'success' | null>(null);
+    const [message, setMessage] = useState<Message | null>(null);
     const isLoaded = useAnimationState();
-
     const form = useRef<HTMLFormElement | null>(null);
+
+    const notify = (msg: Message, status: 'error' | 'success' | null) => {
+        setStatus(status);
+        setMessage(msg);
+        setOpen(true);
+    }
 
     const sendEmail = (e: FormEvent) => {
         e.preventDefault();
-
+        setLoading(true);
         emailjs
             .sendForm(
                 'service_1xyf8n8',     // Replace with your EmailJS service ID
@@ -23,14 +40,14 @@ function ContactsPage() {
                 'WUgi4tpeweg9m6lA0'         // Replace with your EmailJS user ID
             )
             .then(
-                (result) => {
-                    console.log(result.text);
-                    alert('Email sent successfully!');
+                (_result) => {
+                    setLoading(false);
+                    notify({ title: 'Success', text: "Email sent successfully" }, 'success');
                     form.current!.reset();
                 },
                 (error) => {
-                    console.log(error.text);
-                    alert('Error sending email.');
+                    setLoading(false);
+                    notify({ title: 'Error', text: error.text }, 'error');
                 }
             );
     };
@@ -44,12 +61,19 @@ function ContactsPage() {
         >
             <Container
                 sx={{
-                    justifyContent: 'center'
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    paddingTop: { sm: '200px', md: 2 },
+                    px: { xs: 3, sm: 5 },
+                    height: '100vh'
                 }}
             >
+                {/* Link Icon Buttons */}
                 <Typography sx={{ color: 'white' }}>Contact me in:</Typography>
 
-                <Box overflow={'hidden'}>
+                <Box>
                     <m.div
                         animate={{ y: 0 }}
                         initial={{ y: '100%' }}
@@ -78,9 +102,8 @@ function ContactsPage() {
                     </m.div>
                 </Box>
 
-                <Box
-                    sx={{ display: 'flex', flexDirection: 'column' }}
-                >
+                {/* Email Form */}
+                <Box>
                     <Typography sx={{ mt: 3, color: 'white' }}>Or send me email:</Typography>
                     <form ref={form} id="email-form" onSubmit={sendEmail}>
                         <TextField
@@ -155,21 +178,58 @@ function ContactsPage() {
                                 }
                             }}
                         />
-                        <Button
-                            variant="outlined"
-                            type="submit"
+                        <LoadingButton
+                            variant='outlined'
+                            type='submit'
+                            loading={loading}
+                            endIcon={<SendIcon />}
+                            loadingPosition="end"
                             sx={{
                                 color: 'white',
                                 borderColor: '#6eccfa',
                                 transition: 'background-color 0.2s',
+                                justifySelf: 'end',
                                 '&:hover': {
-                                    borderColor: '#7bf772'
+                                    borderColor: '#7bf772',
                                 },
-                                justifySelf: 'end'
-                            }}>
-                            Send Email
-                        </Button>
+                                // Prevent color change in loading state
+                                '&.MuiLoadingButton-loading': {
+                                    color: 'white',
+                                    borderColor: '#6eccfa',
+                                },
+                                '&.MuiLoadingButton-loading:hover': {
+                                    borderColor: '#7bf772',
+                                },
+                            }}
+                        >
+                            <span>Send</span>
+                        </LoadingButton>
                     </form>
+                </Box>
+
+                <Box width={'100%'} height={'80px'}>
+                    <Collapse in={open}>
+                        <Alert
+                            severity={status === "error" ? 'error' : 'success'}
+                            action={
+                                <IconButton
+                                    aria-label="close"
+                                    color="inherit"
+                                    size="small"
+                                    onClick={() => {
+                                        setOpen(false);
+                                    }}
+                                >
+                                    <CloseIcon fontSize="inherit" />
+                                </IconButton>
+                            }
+                            sx={{ mt: 1, mb: 0 }}
+
+                        >
+                            <AlertTitle>{message?.title}</AlertTitle>
+                            {message?.text}
+                        </Alert>
+                    </Collapse>
                 </Box>
             </Container>
         </m.div >

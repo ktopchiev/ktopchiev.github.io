@@ -10,7 +10,7 @@ function App() {
 			<CssBaseline />
 			<Header />
 			<AnimatePresence initial={false} mode={"wait"}>
-				<Container sx={{ mt: 2, maxHeight: '100vh' }}>
+				<Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', m: 0, p: 0, minHeight: '100vh', minWidth: '100vw' }}>
 					<Outlet key={window.location.pathname} />
 				</Container>
 			</AnimatePresence>
