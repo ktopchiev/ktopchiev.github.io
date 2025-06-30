@@ -146,11 +146,11 @@ function Header() {
                                 display: 'block',
                                 marginLeft: '10px',
                                 '&:hover': {
+                                    color: 'white',
                                     backgroundColor: '#454545',
-                                    color: 'white'
                                 },
                                 '&.active': {
-                                    color: 'white',
+                                    color: '#6eccfa',
                                     backgroundColor: 'none'
                                 }
                             }}
