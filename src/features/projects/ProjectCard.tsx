@@ -86,7 +86,7 @@ export default function ProjectCard({ project }: Props) {
                             </Box>
                             <Box sx={{ display: 'flex', flexWrap: 'wrap', mt: 2, justifyContent: 'flex-start', p: 1 }}>
                                 {project.techStack.map(tech =>
-                                    <Chip label={tech} sx={styles.chip} />
+                                    <Chip key={tech} label={tech} sx={styles.chip} />
                                 )}
                             </Box>
                         </CardContent>
