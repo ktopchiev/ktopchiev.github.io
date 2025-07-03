@@ -13,3 +13,12 @@ export const sendPageView = (url: string) => {
     console.warn('gtag is not defined');
   }
 };
+
+export const sendClickEvent = (category: string, label: string) => {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'click', {
+      event_category: category,
+      event_label: label,
+    });
+  }
+};

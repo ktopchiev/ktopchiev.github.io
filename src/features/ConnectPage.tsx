@@ -8,6 +8,7 @@ import { motion as m } from 'framer-motion';
 import useAnimationState from "../hooks/useAnimationState";
 import CloseIcon from '@mui/icons-material/Close';
 import SendIcon from '@mui/icons-material/Send';
+import { sendClickEvent } from "../analytics/analytics";
 
 type Message = {
     title: string;
@@ -52,6 +53,10 @@ function ContactsPage() {
             );
     };
 
+    const handleClick = (btnName: string) => {
+        sendClickEvent('Connect', `Clicked ${btnName}`);
+    }
+
     return (
         <m.div
             initial={{ y: "100%" }}
@@ -83,6 +88,7 @@ function ContactsPage() {
                             href="https://www.linkedin.com/in/karol-topchiev-787b85a8/"
                             target="_blank"
                             sx={{ color: '#6eccfa', '&: hover': { color: 'white' } }}
+                            onClick={() => handleClick('LinkedIn button')}
                         >
                             <FontAwesomeIcon
                                 icon={faLinkedin}
@@ -93,6 +99,7 @@ function ContactsPage() {
                             href="https://github.com/ktopchiev"
                             target="_blank"
                             sx={{ color: 'darkgray', '&: hover': { color: 'white' } }}
+                            onClick={() => handleClick('GitHub button')}
                         >
                             <FontAwesomeIcon
                                 icon={faGithub}

@@ -8,6 +8,7 @@ import { Box, CardActionArea, Chip, Grid, IconButton, styled } from '@mui/materi
 import Project from '../../models/project';
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { sendClickEvent } from '../../analytics/analytics';
 
 interface Props {
     project: Project
@@ -15,8 +16,9 @@ interface Props {
 
 export default function ProjectCard({ project }: Props) {
 
-    const handleClick = (url: string) => {
+    const handleClick = (url: string, btnName: string) => {
         window.open(url, 'blank')?.focus();
+        sendClickEvent('Projects', `Clicked ${btnName}`);
     };
 
     const styles = {
@@ -62,7 +64,7 @@ export default function ProjectCard({ project }: Props) {
             sx={styles.card}
         >
             <StyledCardActionArea
-                onClick={() => handleClick(project.url)}
+                onClick={() => handleClick(project.url, 'Card')}
             >
                 <CardHeader
                     title={project.title}
@@ -95,7 +97,7 @@ export default function ProjectCard({ project }: Props) {
             </StyledCardActionArea>
             <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <IconButton
-                    onClick={() => handleClick(project.repoUrl)}
+                    onClick={() => handleClick(project.repoUrl, 'GitHub button')}
                     sx={styles.button}
                 >
                     <FontAwesomeIcon
