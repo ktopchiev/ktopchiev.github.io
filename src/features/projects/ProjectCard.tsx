@@ -18,7 +18,7 @@ export default function ProjectCard({ project }: Props) {
 
     const handleClick = (url: string, btnName: string) => {
         window.open(url, 'blank')?.focus();
-        sendClickEvent('Projects', `Clicked ${btnName}`);
+        sendClickEvent('Projects', `Clicked ${btnName} of project ${url}`);
     };
 
     const styles = {
